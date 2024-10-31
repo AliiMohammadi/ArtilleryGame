@@ -1,0 +1,20 @@
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\bin\Debug\Artillery Game Server.exe.config
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\bin\Debug\Artillery Game Server.exe
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\bin\Debug\Artillery Game Server.pdb
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.csproj.AssemblyReference.cache
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery_Game_Server.Properties.Resources.resources
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.csproj.GenerateResource.cache
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.csproj.CoreCompileInputs.cache
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.exe
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.pdb
+C:\Users\msi PC\Desktop\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery_Game_Server.ServerForm.resources
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\bin\Debug\Artillery Game Server.exe.config
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\bin\Debug\Artillery Game Server.exe
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\bin\Debug\Artillery Game Server.pdb
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.csproj.AssemblyReference.cache
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery_Game_Server.ServerForm.resources
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery_Game_Server.Properties.Resources.resources
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.csproj.GenerateResource.cache
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.csproj.CoreCompileInputs.cache
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.exe
+D:\Developing\GameProjects\Top khane\Artillery Online game windows form\Artillery Game Server\obj\Debug\Artillery Game Server.pdb
