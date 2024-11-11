@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2a24414-c437-443d-a9ba-8b67be41cb2b": {
+      "ProjectGuid": "a2a24414-c437-443d-a9ba-8b67be41cb2b",
+      "DisplayName": "Artillery Game Server",
+      "ColorIndex": 0
+    },
+    "9112df98-762f-4997-ad0c-57077e5bde30": {
+      "ProjectGuid": "9112df98-762f-4997-ad0c-57077e5bde30",
+      "DisplayName": "Artillery Online game windows form",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
