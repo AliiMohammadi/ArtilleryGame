@@ -35,6 +35,8 @@ namespace Artillery_Online_game_windows_form
         }
         private void Palygroundimage_MouseClick(object sender, MouseEventArgs e)
         {
+            //if(TankManager.GetTankAt(e.Location) !=null)
+            //MessageBox.Show(TankManager.GetTankAt(e.Location).TankImage.Name);
             GameManager.ShotAt(e.Location);
         }
         private void GameForm_KeyPress(object sender, KeyPressEventArgs e)
@@ -45,11 +47,18 @@ namespace Artillery_Online_game_windows_form
         private void OnlineBTN_Click(object sender, EventArgs e)
         {
             PanelManager.ShowGamePanel();
+            
             StartOnlineGame();
         }
         private void OfflineBTN_Click(object sender, EventArgs e)
         {
-
+            PanelManager.ShowGamePanel();
+            GameManager.Mode = GameManager.GameMode.Offline;
+            GameManager.RepositionTanks();
+            SetVisiblityForEnemyTanks(false);
+            SetResultText(string.Empty);
+            GameManager.Status = GameManager.GameStatus.YourTurn;
+            GameManager.CreatAI();
         }
         private void OptionsBTN_Click(object sender, EventArgs e)
         {
@@ -99,8 +108,8 @@ namespace Artillery_Online_game_windows_form
             {
                 GameManager.RepositionTanks();
                 SetVisiblityForEnemyTanks(false);
-                GameManager.SendTankStatusToServer();
                 SetResultText(string.Empty);
+                GameManager.SendTankStatusToServer();
             };
 
             Server.OnDataRecive += GameManager.GetUpdate;

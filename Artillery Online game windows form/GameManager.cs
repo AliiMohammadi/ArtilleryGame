@@ -1,4 +1,5 @@
-﻿using OneeChanRemake.Operation_System;
+﻿using Artillery_Online_game_windows_form.AI;
+using OneeChanRemake.Operation_System;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -22,22 +23,60 @@ namespace Artillery_Online_game_windows_form
             NotStarted,YourTurn,EnemyTurn,Over
         }
         public static GameStatus Status = GameStatus.NotStarted;
+        public enum GameMode
+        {
+            Offline,Online
+        }
+        public static GameMode Mode = GameMode.Offline;
 
         /// <summary>
         /// شماره بازی کن این کلاینت
         /// </summary>
         public static int PlayerNumber = -1;
 
+        static GameAI AI;
         static JavaScriptSerializer Serializer = new JavaScriptSerializer();
 
+        public static void CreatAI()
+        {
+            AI = new GameAI(PlayGround.Ground1,TankManager.ArmyTanks1);
+            AI.OnShotChoose += Botshot;
+        }
         public static void ShotAt(Point hit)
         {
-            if (!ShotPremition(hit))
-                return;
+            switch (Mode)
+            {
+                case GameMode.Offline:
+                    switch(Status)
+                    {
+                        case GameStatus.YourTurn:
 
-            AudioPlayer.PlayShot();
-            Status = GameStatus.EnemyTurn;
-            AnalyseShot(hit);
+                            if (!ShotPremition(hit))
+                                return;
+
+                            AnalisisShotOfflineMode(hit);
+
+                            if (TankManager.ArmyTanks2.Count == 0)
+                            {
+                                Status = GameStatus.Over;
+                                OnWin();
+                            }
+                            else
+                            {
+                                Status = GameStatus.EnemyTurn;
+                                AI.NextStep();
+                            }
+
+                            break;
+                    }
+                    break;
+                case GameMode.Online:
+                    AnalisisShotOnlienMode(hit);
+
+                    break;
+                default:
+                    break;
+            }
         }
         public static void RepositionTanks()
         {
@@ -115,8 +154,43 @@ namespace Artillery_Online_game_windows_form
             }catch { }
         }
 
-        static void AnalyseShot(Point shotlocation)
+
+        static void AnalisisShotOfflineMode(Point shotlocation)
         {
+            AudioPlayer.PlayShot();
+
+            Tank TankVictom = TankManager.GetTankAt(shotlocation);
+
+            Shot newshot = new Shot(shotlocation, string.Empty);
+
+            if (TankVictom == null)
+            {
+                //Shot is null
+                PlayGround.MissedFierMarkImage.Invoke(new MethodInvoker(() => { 
+                    PlayGround.MissedFierMarkImage.Visible = true;
+                    PlayGround.MissedFierMarkImage.Location = Vector.ConvertPositionToWorld(PlayGround.MissedFierMarkImage, shotlocation);
+                }));
+                return;
+            }
+
+            PlayGround.Image.Invoke(new MethodInvoker(() => {
+                PlayGround.MissedFierMarkImage.Visible = true;
+                newshot.Victom = TankVictom.TankImage.Name;
+                TankVictom.TankImage.Visible = true;
+                TankManager.Destroy(TankVictom);
+            }));
+
+        }
+        static void AnalisisShotOnlienMode(Point shotlocation)
+        {
+            if (!ShotPremition(shotlocation))
+                return;
+
+            AudioPlayer.PlayShot();
+
+
+            Status = GameStatus.EnemyTurn;
+
             Tank TankVictom = TankManager.GetTankAt(shotlocation);
 
             Shot newshot = new Shot(shotlocation, string.Empty);
@@ -145,6 +219,12 @@ namespace Artillery_Online_game_windows_form
                 Server.SendData("END" + PlayerNumber);
             }
         }
+        static void Botshot(Point shotlocation)
+        {
+            AnalisisShotOfflineMode(shotlocation);
+            Status = GameStatus.YourTurn;
+        }
+
         static bool ShotPremition(Point HitLocation)
         {
             switch (Status)

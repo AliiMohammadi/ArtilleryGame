@@ -16,7 +16,7 @@ namespace Artillery_Online_game_windows_form
 
         public static Tank GetTankAt(Point location)
         {
-            return GetTankAt(location ,0);
+            return GetTankAt(location ,7);
         }
         public static Tank GetTankAt(Point location , uint Hitradias)
         {
@@ -49,7 +49,11 @@ namespace Artillery_Online_game_windows_form
 
         public static void Destroy(Tank victom)
         {
-            ArmyTanks2.Remove(victom);
+            if(victom.ArmyNumber == 1 )
+                ArmyTanks1.Remove(victom);
+            else
+                ArmyTanks2.Remove(victom);
+
             victom.Destroy();
         }
 

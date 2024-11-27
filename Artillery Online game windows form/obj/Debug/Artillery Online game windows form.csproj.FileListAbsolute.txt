@@ -132,3 +132,15 @@ C:\Users\OFF\Desktop\ArtilleryGame-master\Artillery Online game windows form\obj
 C:\Users\OFF\Desktop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery Online game windows form.csproj.CoreCompileInputs.cache
 C:\Users\OFF\Desktop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery Online game windows form.exe
 C:\Users\OFF\Desktop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery Online game windows form.pdb
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\bin\Debug\Artillery Online game windows form.exe.config
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\bin\Debug\Artillery Online game windows form.exe
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\bin\Debug\Artillery Online game windows form.pdb
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery Online game windows form.csproj.AssemblyReference.cache
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery Online game windows form.csproj.SuggestedBindingRedirects.cache
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery_Online_game_windows_form.GameForm.resources
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery_Online_game_windows_form.Options.resources
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery_Online_game_windows_form.Properties.Resources.resources
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery Online game windows form.csproj.GenerateResource.cache
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery Online game windows form.csproj.CoreCompileInputs.cache
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery Online game windows form.exe
+D:\AmirDocuments\Develop\ArtilleryGame-master\Artillery Online game windows form\obj\Debug\Artillery Online game windows form.pdb
