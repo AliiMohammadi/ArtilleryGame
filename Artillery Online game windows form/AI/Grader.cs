@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Artillery_Online_game_windows_form.AI
 {
-    internal partial class GameAI
+    internal partial class SimpleAI
     {
         class Grader
         {

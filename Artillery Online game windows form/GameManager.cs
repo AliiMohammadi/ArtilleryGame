@@ -39,7 +39,7 @@ namespace Artillery_Online_game_windows_form
 
         public static void CreatAI()
         {
-            AI = new GameAI(PlayGround.Ground1,TankManager.ArmyTanks1);
+            AI = new SimpleAI(PlayGround.Ground1,TankManager.ArmyTanks1);
             AI.OnShotChoose += Botshot;
         }
         public static void ShotAt(Point hit)

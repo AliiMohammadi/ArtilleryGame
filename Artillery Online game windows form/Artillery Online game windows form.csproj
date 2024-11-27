@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI\Grader.cs" />
+    <Compile Include="AI\SimpleAI.cs" />
     <Compile Include="AI\Spot.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>

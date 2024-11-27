@@ -19,10 +19,8 @@ namespace Artillery_Online_game_windows_form.AI
             End = b;
         }
     }
-    //R = 113
-    //
 
-    internal partial class GameAI
+    internal abstract class GameAI
     {
         public delegate void ShotEvent(Point shotLocation);
         public event ShotEvent OnShotChoose;
@@ -30,18 +28,14 @@ namespace Artillery_Online_game_windows_form.AI
         public Rectangle PlayEnvironment;
         public Range NextStepDelay = new Range(1,3);
 
-        Random globalrandom = new Random(DateTime.Now.Second);
+        public List<Tank> EnemyTanlks = new List<Tank>();
+
         Random stepdelyarand = new Random(DateTime.Now.Second * 7);
-        Random selectmethodrand = new Random(DateTime.Now.Second * 3);
 
-        Grader grader;
-
-        List<Tank> tanks = new List<Tank>();
-
-        public GameAI(Rectangle PlayEnvironment , List<Tank> EnemyTanks)
+        public GameAI(Rectangle Playenvironment , List<Tank> EnemyTanks)
         {
-            grader = new Grader(PlayEnvironment, 50);
-            tanks = EnemyTanks;
+            EnemyTanlks = EnemyTanks;
+            PlayEnvironment = Playenvironment;
         }
 
         public void NextStep()
@@ -66,57 +60,18 @@ namespace Artillery_Online_game_windows_form.AI
 
                 Thread.Sleep(stepdelyarand.Next(NextStepDelay.Start * 1000,NextStepDelay.End * 1000));
 
-                int selectmethod = selectmethodrand.Next(100);
-
-                RandomSelect();
-
-
-                //if (selectmethod >= 45)
-                //    CenterSelect();
-                //if (selectmethod < 45 && selectmethod >= 10)
-                //    RandomSelect();
-                //else
-                //    AccurateSelect();
+                Action();
             });
         }
+        protected abstract void Action();
 
-        void RandomSelect()
+        protected void Resutl (Point Loc)
         {
-            int x;
-            int y;
-
-            while (true)
-            {
-                x = globalrandom.Next(grader.width);
-                y = globalrandom.Next(grader.height);
-
-                if (!grader[x, y].Filled)
-                    break;
-            }
-
             if (OnShotChoose != null)
-                OnShotChoose(grader[x, y].Location);
-
-            grader[x, y].Fill();
-
-            logShot(grader[x,y].Location);
-
-        }
-        void CenterSelect()
-        {
-            float scale = 0.7f;
-
-            Point Center = new Point((PlayEnvironment.Width/2) + PlayEnvironment.X, (PlayEnvironment.Height/2) + PlayEnvironment.Y);
-            int Rad = (int)(((Math.Sqrt(Math.Pow(PlayEnvironment.Width,2) + Math.Pow(PlayEnvironment.Height,2))) / 2) * scale);
-
-
-        }
-        void AccurateSelect()
-        {
-
+                OnShotChoose(Loc);
         }
 
-        void logShot(Point location)
+        protected void logShot(Point location)
         {
             Trace.WriteLine($"AI: RandomSelect: ({location.X},{location.Y})");
         }
